@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Барбершоп Бишоп</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+    <body>
+        <header class="main-header">
+             <div class="container clearfix">
+                 <nav class="main-navigaion">
+                        <ul>
+                    <li><a href ="index.html">Главная</a></li>
+                    <li><a href ="shop.html">Информация</a></li>
+                    <li><a href ="#">Новости</a></li>
+                    <li><a href ="price.html">Прайс-лист</a></li>
+                    <li><a href ="item.html">Магазин</a></li>
+                    <li><a href ="#">Контакты</a></li>
+                        </ul>
+                 </nav>
+                <div class="user-block"><a class="login" href="#">Вход</a>
+                </div>
+
+            </div>
+        </header>
+            <main class="container">
+                <div class="img-logo"><img src="img/logo.png" width="368" height="145" alt="Барбершоп Бишоп"></div>
+                    <section class="features clearfix">
+                        <div class="features__item">
+                         <b class="features__featureName">Бреем</b>
+                            <p>Раскованно и рискованно. В пределах разумного, конечно. Предоставляем стопроцентную гарантию на получение по-настоящему крутых впечатлений. Мы считаем, что бритье                                 опасной бритвой должен попробовать каждый мужчина.</p>
+                        </div><div class="features__item">
+                                 <b class="features__featureName">Стрижем</b>
+                        <p>Невероятно модно или классически привлекательно – выбор за Вами. Впрочем, мы решительны и можем сами сделать этот выбор, если Вы открыты к новому и готовы                                         экспериментировать. Мы знаем все о модных мужских стрижках и предложим Вам лучший вариант.</p>
+                              </div><div class="features__item">
+                                            <b class="features__featureName">Занимаемся успехом</b>
+                                                <p>Создаем брутальный комфорт. Поддерживаем атмосферу мужественности, стиля и побед – очень масштабных и просто значительных.</p>
+                                     </div>
+                     </section>
+                    <div class="indexContent clearfix">
+                        <div class="indexContent__left">
+                            <h2 class="indexContent__title">Новости</h2>
+                              <div class="indexContent__previev">
+                                <ul>
+                                    <li><p>НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ</p>
+                                         <time datetime = "2018-08-06">6 Августа</time></li>
+                                    <li><p>В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДЕТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ</p>
+                                         <time datetime = "2018-08-03">3 Августа</time></li>
+
+                                </ul>
+                              </div>
+                                    <a class="indexContent__bnt" href="#">Все новости</a>
+                     </div>
+                <div class="indexContent__right"><h2 class="indexContent__title"> Фотогалерея</h2>
+                    <div class="gallery">
+                        <figure class="indexContent__gallery"><img src="img/gallery.jpg" /></figure>
+                            <button class="indexContent__bnt     bnt-prev disabled">Назад</button>
+                                <button class="indexContent__bnt bnt-next">Вперёд</button>
+                    </div>
+                </div>
+
+            </div>
+                <div class="indexContent clearfix">
+                    <div class="indexContent__left">
+                         <h2 class="indexContent__title">Контактная информация</h2>
+                             <p>
+                                 Барбершоп Бишоп<br>
+                                 Адрес: г.Ставрополь, ул.Белинского, д.21/3<br>
+                                 Телефон: +7(987)341-21-61
+                             </p>
+                        <p>
+                            Время работы <br>
+                            пн-пт: с 10 до 22<br>
+                            сб-вс: с 10 до 19
+                        </p>
+                        <a class="indexContent__bnt" href="#">Как проехать</a>
+                        <a class="indexContent__bnt" href="#">Обратная связь</a>
+                </div>
+                    <div class="indexContent__right">
+                    <h2 class="indexContent__title"> Записаться</h2>
+                        <p>Укажите дату и время и мы с вами свяжеемся для подтверждения брони</p>
+                        <form class="appoinment-form" method="post" action="index.html">
+                        <input type="text" name="date" placeholder="Дата">
+                        <input type="text" name="time" placeholder="Время">
+                        <input type="text" name="name" placeholder="Ваше Имя">
+                        <input type="text" name="phone" value="" placeholder="Телефон">
+                            <button class="indexContent__bnt form_btn" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <div class="container">
+                <section class="footer__contacts">
+                    <p>Контактная информация</p>
+                    Барбершоп Бишоп<br>
+                    Адрес: г.Ставрополь, ул.Белинского, д.21/3<br>
+                    <a  href="#">Как нас найти</a><br>
+                    Телефон: +7(987)341-21-61
+                </section>
+                <section class="footer__social">
+                    <p>Давайте дружить!</p>
+                    <a class="footer__social-btn footer__social-btnvk" href="#">Вконтакте</a>
+                    <a class="footer__social-btn footer__social-btnfb" href="#">Фейсбук</a>
+                    <a class="footer__social-btn footer__social-btninst" href="#">Инстаграм</a>
+                </section>
+                <section class="footer__copyright">
+                    <p>Разработано:</p>
+                    <a class="indexContent__bnt flomasta_btn" href="http://masterov.org">Flomasta</a>
+                </section>
+        </div>
+    </footer>
+
+</body>
+</html>
