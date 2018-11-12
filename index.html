@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
+
 </head>
     <body>
         <header class="main-header">
@@ -76,7 +77,7 @@
                             пн-пт: с 10 до 22<br>
                             сб-вс: с 10 до 19
                         </p>
-                        <a class="indexContent__bnt" href="#">Как проехать</a>
+                        <a class="indexContent__bnt show-the-way" href="#">Как проехать</a>
                         <a class="indexContent__bnt" href="#">Обратная связь</a>
                 </div>
                     <div class="indexContent__right">
@@ -115,5 +116,97 @@
         </div>
     </footer>
 
+        <div class="modal-content">
+            <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
+                <h2>Личный кабинет</h2>
+                    <p>Введите логин и пароль:</p>
+                        <form class="login-form" action="" method="post">
+                            <input class="icon-user" type="text" name="login" placeholder="Логин">
+                            <input class="icon-pass" type="password" name="password" placeholder="Пароль">
+                              <label class="login-checkbox">
+                                  <input type="checkbox" name="remember">
+                                  <span class="checkbox-indicator" type="submit"></span>
+                                  Запомните меня
+                              </label>
+                            <a class="restore" href="#">Я забыл пароль!</a>
+                            <button class="indexContent__bnt btn_form" type="submit">Войти</button>
+                        </form>
+            </div>
+            <div class="modal-content-map"><button class="modal-content-close" type="button" title="Закрыть"></button>
+            <div id="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.2650816634564!2d41.964337815920715!3d45.060133479098276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f900d1a9186093%3A0xa2e76dace7cffb75!2z0L_QtdGALiDQkdC10LvQuNC90YHQutC-0LPQviwgMjEsINCh0YLQsNCy0YDQvtC_0L7Qu9GMLCDQodGC0LDQstGA0L7Qv9C-0LvRjNGB0LrQuNC5INC60YDQsNC5LCAzNTUwMDE!5e0!3m2!1sru!2sru!4v1542013461120" width="819" height="603" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        </div>
+            <div class="modal-overlay"></div>
+
 </body>
+
+<script>
+    var link = document.querySelector(".login");
+    var popup = document.querySelector(".modal-content");
+    var close = document.querySelector(".modal-content-close");
+    var overlay = document.querySelector(".modal-overlay");
+    var form = popup.querySelector("form");
+    var login = popup.querySelector("[name=login]");
+    var password = popup.querySelector("[name=password]");
+    var storage = localStorage.getItem("login");
+    var mapOpen = document.querySelector(".show-the-way");
+    var mapWindow = document.querySelector(".modal-content-map");
+    var mapClose = mapWindow.querySelector(".modal-content-close");
+
+
+
+
+    link.addEventListener("click",function(event){
+        event.preventDefault();
+        popup.classList.add("modal-content-show");
+        overlay.classList.add("modal-overlay-show");
+        if (storage){
+            login.value = storage;
+            password.focus();
+        }
+        else {
+            login.focus();
+        }
+    });
+    form.addEventListener("submit", function(event){
+        if (!login.value || !password.value){
+            event.preventDefault();
+            popup.classList.add("modal-error");
+
+        }else{
+            localStorage.setItem("login",login.value);
+        }
+    });
+
+
+
+     close.addEventListener("click",function (event) {
+         event.preventDefault();
+         popup.classList.remove("modal-content-show");
+         overlay.classList.remove("modal-overlay-show");
+         popup.classList.remove("modal-error");
+     });
+
+
+    window.addEventListener("keydown",function (event){
+        if (event.keyCode === 27){
+            if(popup.classList.contains("modal-content-show")) {
+                popup.classList.remove("modal-content-show");
+                overlay.classList.remove("modal-overlay-show");
+            }
+        }
+    });
+
+    mapOpen.addEventListener("click", function (event) {
+        event.preventDefault();
+        mapWindow.classList.add("modal-content-map-open");
+        overlay.classList.add("modal-overlay-show");
+
+    });
+    mapClose.addEventListener("click",function (event) {
+        event.preventDefault();
+
+        mapWindow.classList.remove("modal-content-map-open");
+        overlay.classList.remove("modal-overlay-show");
+    })
+</script>
 </html>
